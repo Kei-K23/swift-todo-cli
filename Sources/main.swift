@@ -60,4 +60,5 @@ var tasks: [Task] = [
 
 addTask()
 markAsDone()
+deleteTask()
 listTasks(tasks: tasks)
