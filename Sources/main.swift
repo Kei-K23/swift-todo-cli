@@ -45,6 +45,19 @@ var tasks: [Task] = [
     print("Task with \(index) mark as done")
 }
 
+@MainActor func deleteTask() {
+    listTasks(tasks: tasks)
+    print("Enter the index of a task to delete: ")
+
+    guard let input = readLine(), let index = Int(input), index >= 0, index < tasks.count else {
+        print("Invalid value")
+        return
+    }
+
+    let removed = tasks.remove(at: index)
+    print("Deleted: \(removed.title)")
+}
+
 addTask()
 markAsDone()
 listTasks(tasks: tasks)
