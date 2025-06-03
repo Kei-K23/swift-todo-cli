@@ -11,15 +11,40 @@ func listTasks(tasks: [Task]) {
     } else {
         for (index, task) in tasks.enumerated() {
             let status = task.isDone ? "✅" : "🕐"
-            print("[\(index + 1)] \(status) \(task.title)")
+            print("[\(index)] \(status) \(task.title)")
 
         }
     }
 }
 
-var sampleTasks: [Task] = [
+var tasks: [Task] = [
     Task(title: "Task 1", isDone: true),
     Task(title: "Task 2", isDone: false),
 ]
 
-listTasks(tasks: sampleTasks)
+@MainActor func addTask() {
+    print("Enter task title: ")
+    if let input = readLine(), !input.isEmpty {
+        let newTask = Task(title: input, isDone: false)
+        tasks.append(newTask)
+    } else {
+        print("Invalid input")
+    }
+}
+
+@MainActor func markAsDone() {
+    listTasks(tasks: tasks)
+    print("Enter the index of a task to mark as done: ")
+
+    guard let input = readLine(), let index = Int(input), index >= 0, index < tasks.count else {
+        print("Invalid value")
+        return
+    }
+
+    tasks[index].isDone = true
+    print("Task with \(index) mark as done")
+}
+
+addTask()
+markAsDone()
+listTasks(tasks: tasks)
