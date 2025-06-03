@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:swift-todo-cli}",
+      "name": "Debug swift-projects",
+      "program": "${workspaceFolder:swift-todo-cli}/.build/debug/swift-projects",
+      "preLaunchTask": "swift: Build Debug swift-projects"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:swift-todo-cli}",
+      "name": "Release swift-projects",
+      "program": "${workspaceFolder:swift-todo-cli}/.build/release/swift-projects",
+      "preLaunchTask": "swift: Build Release swift-projects"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:swift-todo-cli}",
+      "name": "Debug swift-todo-cli",
+      "program": "${workspaceFolder:swift-todo-cli}/.build/debug/swift-todo-cli",
+      "preLaunchTask": "swift: Build Debug swift-todo-cli"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:swift-todo-cli}",
+      "name": "Release swift-todo-cli",
+      "program": "${workspaceFolder:swift-todo-cli}/.build/release/swift-todo-cli",
+      "preLaunchTask": "swift: Build Release swift-todo-cli"
+    }
+  ]
+}
